@@ -1,0 +1,27 @@
+Quantum Arid------------Quantum Theory presents, Quantum Arid, the third of 4 AAA-quality background packages for Unity3D. 
+
+Package Contains:
+*     10 low polygon (~2000 triangles) meshes approximately 100mx100m in size. This is not a Unity Terrain. Duplicate, rotate, and compose these in your scene to your liking.
+*     10 custom made, hi fidelity 2048x2048 diffuse and normal maps; a set for each mesh.
+*     10 16bit greyscale displacement maps used to construct the mountain geometry.  Need more geometry in the mountains? Less? Recreate them quickly with these displacement maps.
+ *     Custom made, extremely high resolution 360 degree arctic skybox. Each side of the skybox is 2048x2048.
+Questions? Comments? Need help? Contact quantum.theory.ent@gmail.comUsage-----There are 10 meshes found in the Quantum Theory/Quantum Arid/Meshes folder labeled A through J. Simply drag the meshes you want into your scene. Since mountains are big, beware that the meshes are 100 meters by 100 meters in size. Scale them to fit your scene. Compose them, move them, and rotate them to immerse your audience and help create a truly hi quality experience.Since the meshes are 2000 triangles each, you may desire more or less triangles in the meshes. With the provided 16bit displacement maps, you can reconstruct the geometry of each mesh. You can find the displacement maps in a ZIP file in the Quantum Theory/Quantum Arid/Meshes/Materials folder. Simply open your favorite 3d authoring tool, create a flat plane, give the plane a sensible amount of segments, then displace the geometry of the plane using the corresponding displacement map.You can find the skybox material in Quantum Theory/Quantum Arid/Meshes/Materials. The filename is Skybox_QuantumArid. Goto Edit -> Render Settings. In the inspector, find the material slot labeled, "Skybox Material." Drag and drop Skybox_QuantumArid into this slot and you're ready to go. Since the skybox is not rendered to the zbuffer, the skybox textures have "Generate MipMaps" disabled to save texture memory.
+Creating Unity Terrains
+-----------------------
+
+1. Create a Unity Terrain in Unity by going to Terrain -> Create Terrain. The current terrain size doesn't matter because you'll set it in the next steps.
+2. Get the topography by choosing Terrain -> Import Heightmap - RAW. Choose any of the RAW displacement map images supplied in the Materials folder.
+3. Keep the width and height at 2048, set the byte order to Windows, and set the terrain x and z values equally. The Y value is terrain height and can be whatever you like.
+4. The terrain is made but the diffuse and normal textures aren't applied yet. In the terrain inspector, click on the small brush button (the button in the middle).
+5. Click on "Edit Textures" then "Add Texture"
+6.  For "Texture" pick the correspoding diffuse texture. For normal map, pick the corresponding normal map. For example, if the displacement map you used was named "QuantumCold_Displacement_A," you would use QuantumCold_Diffuse_A for the diffuse and QuantumCold_Normal_A for the normal map.  For the two size values, put in the terrain x and z values you set in step 4.
+7.  If you added a normal map in the slot, you'll notice a message saying that the terrain requires a material with a normal mapped terrain shader. Simply create a new material in your project using the Nature/Terrain/Bumped Specular shader. 
+8. Click on the terrain to bring up its inspector. Click on the last icon that looks like a little gear. (terrain settings) Drag and drop that new material into the "Material" slot.
+
+Issues:
+- If the terrain comes out garbled or messed-up looking when importing the RAW heightmap, it's probably because the byte order was not set to the header in the RAW file. The RAW should be IBMPC and the byte order in unity is Windows. If you're using a Mac, try Mac for both.
+- If it's still messed up, make sure the Width and Height settings are set to 2048 when you're importing the heightfield. Remember, the terrain size can be anything but square is best.
+
+Version History
+---------------
+Version 1.1: Changed TIF files to RAW, added documentation on creating unity terrainsversion 1.0: Initial version.
