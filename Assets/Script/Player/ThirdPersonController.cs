@@ -440,6 +440,7 @@ namespace HaDuyBach
         /// </summary>
         public void ChangeCameraFollow(int i)
         {
+            Debug.LogWarning("đang đổi sang camera " + i);
             if (_cameraFollow != null)
             {
                 _cameraFollow.gameObject.SetActive(false);

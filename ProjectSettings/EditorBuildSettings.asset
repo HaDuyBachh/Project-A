@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AI Checked Scene.unity
     guid: 4294d17ec119bba40afd4df31c261366
+  - enabled: 1
+    path: Assets/Map Template/Town Constructor 3/Scenes/DemoSceneLightSetting3.unity
+    guid: 09f25dfdfde37364388a302888402d81
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5e0c11acfcf5fdd4ebb7da7e7b49c9de,
       type: 2}
